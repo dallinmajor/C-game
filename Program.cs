@@ -7,35 +7,19 @@ namespace c_game
 {
     class Program
     {
-        static Weapon AssembleWeapon(string weaponName, Attack attackOne, Attack attackTwo, Attack attackThree)
-        {
-            Attack[] Attacks = new Attack[3];
-            Attacks[0] = attackOne;
-            Attacks[1] = attackTwo;
-            Attacks[2] = attackThree;
-
-            return new Weapon(weaponName, Attacks);
-        }
         static void Main(string[] args)
         {
-            string attackOne = "Cleave";
-            string attackTwo = "Dash Attack";
-            string attackThree = "Parry";
-            string attackFour = "Power Attack";
-            string attackFive = "Devilish Thrust";
+            var Longsword = WeaponStore.WeaponOne();
+            var Daggers = WeaponStore.WeaponTwo();
+            var Scimitars = WeaponStore.WeaponThree();
+            var Rapier = WeaponStore.WeaponFour();
+            var BattleAxe = WeaponStore.WeaponFive();
 
-            var AttackOne = new Attack(attackOne, new string[] {attackFive, attackThree});
-            var AttackTwo = new Attack(attackTwo, new string[] {attackOne, attackFour});
-            var AttackThree = new Attack(attackThree, new string[] {attackTwo, attackFive});
-            var AttackFour = new Attack(attackFour, new string[] {attackThree, attackOne});
-            var AttackFive = new Attack(attackFive, new string[] {attackFour, attackTwo});
-
-            var Attacks = new List<Attack>(3);
-
-            
-
-            
-            
+            Console.WriteLine(Longsword.Name);
+            Console.WriteLine(Daggers.Name);
+            Console.WriteLine(Scimitars.Name);
+            Console.WriteLine(Rapier.Name);
+            Console.WriteLine(BattleAxe.Name);
         }
     }
 }
